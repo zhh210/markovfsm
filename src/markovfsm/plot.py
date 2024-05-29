@@ -18,7 +18,7 @@ def transitions_to_graph(digraph, matrix, state_index_to_name = lambda s: "%s" %
         digraph.node(state_index_to_name(i))
     for current_state in range(dim):
         for next_state in range(dim):
-            alpha = "{0:x}".format(int(round(matrix[current_state][next_state] * 250 + 6)))
+            alpha = "{0:x}".format(int(round(matrix[current_state][next_state] * 250)))
             digraph.edge(state_index_to_name(current_state),
                          state_index_to_name(next_state),
                          label=" %.4f " % matrix[current_state][next_state],
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     from graphviz import Digraph
 
     matrix = [[0.5, 0.5], [0.5, 0.5]]
-    print transitions_to_dotlang(matrix)
+    print(transitions_to_dotlang(matrix))
     g = Digraph(format='svg', engine='dot',
                 graph_attr={'overlap': 'true', 'pad': '0.1', 'nodesep': '0.5', 'ranksep': '1.0'},
                 edge_attr={'fontname':'HelveticaNeue'})
