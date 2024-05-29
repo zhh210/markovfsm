@@ -88,12 +88,12 @@ if __name__ == '__main__':
     #
     P = chain.transition_matrix()
 
-    print "%s %s" % (P[0][0], P[0][1])
-    print "%s %s" % (P[1][0], P[1][1])
+    print("%s %s" % (P[0][0], P[0][1]))
+    print("%s %s" % (P[1][0], P[1][1]))
 
     # get probabilities of transition from state 0 to other states (0 and 1)
     # actually, the line in the transition matrix
-    print chain.get_transitions_probs(0)
+    print(chain.get_transitions_probs(0))
 
     # let's make a FSM with stochastic properties equal to described by Markov chain
     # use rnd() as a random numbers generator, and 0 (heads) as initial state
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     # get transition matrix. it should be nearly equal
     P2 = chain2.transition_matrix()
 
-    print "%s %s" % (P2[0][0], P2[0][1])
-    print "%s %s" % (P2[1][0], P2[1][1])
+    print("%s %s" % (P2[0][0], P2[0][1]))
+    print("%s %s" % (P2[1][0], P2[1][1]))
 
-    print chain2.get_transitions_probs(0)
+    print(chain2.get_transitions_probs(0))
