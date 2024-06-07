@@ -21,7 +21,7 @@ def transitions_to_graph(digraph, matrix, state_index_to_name = lambda s: "%s" %
             alpha = "{0:x}".format(int(round(matrix[current_state][next_state] * 250)))
             digraph.edge(state_index_to_name(current_state),
                          state_index_to_name(next_state),
-                         label=" %.4f " % matrix[current_state][next_state],
+                         label=(" %.4f " % matrix[current_state][next_state]) if matrix[current_state][next_state] > 0 else '',
                          color='#ff0000%s' % alpha,
                          fontcolor='#f00000%s' % alpha)
 
